@@ -1,0 +1,23 @@
+[package]
+name = "ask"
+version = "0.0.1"
+description = "A simple prompt app window appearing on top of all other windows"
+authors = ["oleksiiluchnikov@gmail.com"]
+license = "MIT"
+repository = "https://github.com/oleksiiluchnikov/ask"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[build-dependencies]
+tauri-build = { version = "1.0.0", features = [] }
+
+[dependencies]
+tauri = { version = "1.0.0", features = [ "api-all"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+[features]
+# this feature is used for production builds or when `devPath` points to the filesystem
+# DO NOT REMOVE!!
+custom-protocol = ["tauri/custom-protocol"]
